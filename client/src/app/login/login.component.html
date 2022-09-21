@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<div class=" conatiner col-lg-4 col-md-5 col-sm-6 m-auto mt-5 mb-5">
+    <h2 class="text-center mb-4">Already Have a Account Then Login </h2>
+    <form [formGroup]="form">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email </label>
+            <input type="email" class="form-control" id="email" formControlName="email"
+                placeholder="Email" />
+            <small *ngIf="form.controls['email'].invalid && isSubmitted">
+                <span *ngIf="form.controls['email'].errors['required']" style="color: red ">Email can't be empty</span>
+                <span *ngIf="form.controls['email'].errors['email']" style="color: red">Invalid Email</span>
+            </small>
+        </div><br>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="password" formControlName="password"
+                placeholder="Password" />
+            <small *ngIf="form.controls['password'].invalid && isSubmitted" style="color: red">
+                Password can't be empty
+            </small>
+        </div><br>
+        <button type="submit" class="btn btn-outline-dark px-4" (click)="login()">Login</button>
+        <button class="btn btn-outline-dark px-4 mx-4"  routerLink="/auth">Back</button>
+        <div class="col-md-12" *ngIf="isSubmitted && authError">
+            <small style="color: red">Login failed wrong user credentials</small>
+          </div>
+    </form>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+      <button class="btn btn-outline-dark" routerLink="/signup">Register Now</button>
+      </div>
+</div>
+<app-footer></app-footer>

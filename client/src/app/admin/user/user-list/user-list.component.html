@@ -1,0 +1,39 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="container text-center mt-5 mb-5">
+  <h2><i class="fa-solid fa-users"></i> Users Credentials </h2>
+</div>
+<div class=" container">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Full Name</th>
+      <th scope="col">Email Address</th>
+      <th scope="col">Contact Number</th>
+      <th scope="col">City Name</th>
+      <th scope="col">Manage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.name | titlecase}}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.phone }}</td>
+      <td>{{ user.city }}</td>
+      <td>
+        <button class="btn btn-outline-dark" (click)="updateUser(user.id)"><i class="fa fa-edit" aria-hidden="true"></i></button>
+        <button class="btn btn-outline-dark"(click)="deleteUser(user.id)"><i class="fa fa-trash"></i>
+        </button>
+        </td>
+  </tr>
+  </tbody>
+</table>
+</div>
+<div class="container text-start">
+  <button class="btn btn-outline-dark" routerLink="/user-create"> <i class="fa fa-plus"></i>
+    Add New User/Admin </button>
+  <button class="btn btn-outline-dark px-4" routerLink="/admin">Back</button>
+</div>
+<br>
+
+<app-footer></app-footer>

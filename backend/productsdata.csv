@@ -1,0 +1,15 @@
+name,description,image,price,category,stock
+Wall Picture Frame,Made in India,http://localhost:3000/images/wallimgframe.jpg,1500,Home decore,150
+Bean Bag,Made in India,http://localhost:3000/images/beanbag.jpg,2499,Office decore,50
+White Flower Pot,Made in India,http://localhost:3000/images/flowerpot2.jpg,2499,Office decore,250
+Brown Sofa,Made in India,http://localhost:3000/images/brownsofa.jpg,3000,Home decore,200
+Green Sofa,Made in India,http://localhost:3000/images/greensofa.jpg,4999,Home decore,75
+Lord Buddha Sculpture,Made in India,http://localhost:3000/images/budha.jpg,1999,Home decore,10
+Wooden Chair,Made in India,http://localhost:3000/images/chair2.jpg,1499,Office decore,100
+Furniture Set,Made in India,http://localhost:3000/images/furniture1.jpg,7999,Home decore,50
+Electric Lamp,Made in India,http://localhost:3000/images/lamp1.jpg,2499,Home decore,150
+Brown Flower Pot,Made in India,http://localhost:3000/images/flowerpot1.jpg,1999,Home decore,250
+Wall Clock,Made in India,http://localhost:3000/images/wallclock.jpg,6999,Home decore,25
+White Lamp,Made in India,http://localhost:3000/images/whitelamp.jpg,3499,Home decore,15
+Pillow Set,Made in India,http://localhost:3000/images/pillowset.jpg,1999,Home decore,500
+Jutt Natural Basket Set,Made in India,http://localhost:3000/images/juttproductset.jpg,2999,Home decore,125

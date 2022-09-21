@@ -1,0 +1,27 @@
+
+.btn {
+    margin: 5px;
+}
+
+
+a:link {
+  color: black ;
+  background-color: transparent;
+  text-decoration: none;
+
+}
+a:visited {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+}

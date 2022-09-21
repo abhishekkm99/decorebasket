@@ -1,0 +1,33 @@
+<ng-container *ngIf="product">
+  <div class="card shadow-lg">
+    <img
+      class="card-image"
+      src="{{ product.image }}"
+      alt="{{ product.name }}"
+    />
+    <div class="card-body text-center">
+      <h3 class="card-title">{{ product.name | titlecase }}</h3>
+      <h5 class="text-muted">Type: {{ product.category | titlecase }}</h5>
+      <p class="card-text">Details: {{ product.description | titlecase }}</p>
+      <p *ngIf="product.stock > 0">
+        Stock={{ product.stock }}
+      </p>
+      <p >
+        Price= {{ product.price | currency: "INR":"symbol" }}
+      </p>
+      <div class="text-center">
+      <button class="btn btn-outline-dark" (click)="addToWishlist()">
+        Add to Wishlist
+      </button>
+      <br>
+      <button
+        class="btn btn-outline-success mt-2"
+        (click)="addToCart()"
+        [disabled]="product.stock <= 0"
+      >
+        Add to Cart
+      </button>
+      </div>
+    </div>
+  </div>
+</ng-container>

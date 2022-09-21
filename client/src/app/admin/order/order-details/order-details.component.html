@@ -1,0 +1,122 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container">
+<div class="container text-center mb-4 mt-4">
+    <h2>Order Details</h2>
+</div>
+
+<div class="card" *ngIf="order">
+    <div class="card-header text-center">Order Details</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h6>Order Id</h6>
+                <p>{{ order.id }}</p>
+            </div>
+            <div class="col-sm-4">
+                <h6>Order Date</h6>
+                <p>{{ order.dateOrdered | date: "short" }}</p>
+            </div>
+            <div class="col-sm-4">
+                <!-- <h6>Order Status</h6>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" #status
+                    (change)="onSelected(status.value)" [value]="currentStatus">
+                    <option value="Processing">Processing</option>
+                    <option value="Shipped">Shipped</option>
+                    <option value="Delivered">Delivered</option>
+                    <option value="Failed">Failed</option>
+                </select> -->
+                <h6>Order Total Price</h6>
+                <p>{{ order.totalPrice | currency: "INR":"symbol" }}</p>
+            </div>
+            <!-- <div class="col-sm-4">
+                <h6>Order Total Price</h6>
+                <p>{{ order.totalPrice | currency: "INR":"symbol" }}</p>
+            </div> -->
+        </div>
+    </div>
+</div>
+
+
+<div class="card" *ngIf="order">
+    <div class="card-header text-center">Order Items</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2">
+                <h6> Product Name</h6>
+            </div>
+            <div class="col-sm-2">
+                <h6>Category</h6>
+            </div>
+            <div class="col-sm-2">
+                <h6>Price</h6>
+            </div>
+            <div class="col-sm-2">
+                <h6>Quantity</h6>
+            </div>
+            <div class="col-sm-2">
+                <h6>Subtotal</h6>
+            </div>
+        </div>
+        <div class="row" *ngFor="let orderItem of order.orderItem">
+            <div class="col-sm-2">
+                <p>{{ orderItem.product.name | titlecase}}</p>
+            </div>
+            <div class="col-sm-2">
+                <p>{{ orderItem.product.category | titlecase}}</p>
+            </div>
+            <div class="col-sm-2">
+                <p>{{ orderItem.product.price | currency: "INR":"symbol" }}</p>
+            </div>
+            <div class="col-sm-2">
+                <p>{{ orderItem.quantity }}</p>
+            </div>
+            <div class="col-sm-2">
+                <p>{{ orderItem.product.price * orderItem.quantity | currency: "INR":"symbol" }}</p>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-2 offset-md-8">
+            <p style="font-weight: bold">Total Price:</p>
+        </div>
+        <div class="col-sm-2">
+            <p>{{ order.totalPrice | currency: "INR":"symbol" }}</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="card" *ngIf="order">
+    <div class="card-header text-center">Order Address</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h6>Order Address</h6>
+                 Address: {{ order.shippingAddress |titlecase }}
+                 <br />
+                 City:
+                {{ order.city | titlecase}}
+                <br />
+                Country:
+                {{ order.country | titlecase }}
+                <hr>
+            </div>
+            <div class="col-sm-4">
+                <h6>Customer Name</h6>
+                <p>{{ order.user.name }}</p>
+            </div>
+            <div class="col-sm-4">
+                <h6>Contact Info</h6>
+                <p>{{ order.phone }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="container text-center">
+  <!-- <button class="btn btn-outline-success btn1" (click)="onSave()">Save</button> -->
+  <button class="btn btn-outline-dark btn1" (click)="back()">Back</button>
+</div>
+
+<app-footer></app-footer>

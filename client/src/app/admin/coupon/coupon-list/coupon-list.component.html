@@ -1,0 +1,39 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="container text-center mt-5 mb-5">
+  <h2><i class="fa-solid fa-table"></i> Coupons DashBoard </h2>
+</div>
+<div class=" container">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Coupon Name</th>
+      <th scope="col">Coupon Code</th>
+      <th scope="col">Coupon Value</th>
+      <th scope="col">Min Purchase</th>
+      <th scope="col">Status</th>
+      <th scope="col">Manage</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of coupons">
+      <td>{{data.couponName | titlecase}}</td>
+      <td>{{ data.couponCode }}</td>
+      <td>{{ data.couponValue }}</td>
+      <td>{{data.minPurchase }}</td>
+      <td>{{data.active }}</td>
+      <td>
+        <button class="btn btn-outline-dark"(click)="delCoupon(data.id)"><i class="fa fa-trash"></i></button>
+      </td>
+  </tr>
+  </tbody>
+</table>
+</div>
+<div class="container text-start">
+  <button class="btn btn-outline-dark" routerLink="/coupon-create"> <i class="fa fa-plus"></i>
+    Add New Coupon</button>
+</div>
+<br>
+
+<app-footer></app-footer>

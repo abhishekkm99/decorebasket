@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<div class="d-grid col-3 mx-auto">
+  <h2 class="text-center mt-5" *ngIf="!userName">Welcome to DecoreBasket
+  </h2>
+  <button class="btn btn-outline-dark" type="button" routerLink="/admin-login" *ngIf="!userName">Admin Panel</button>
+  <button class="btn btn-outline-dark" type="button" routerLink="/login" *ngIf="!userName">User Panel</button>
+</div>
+<div class="container mt-5" *ngIf="userName">
+  <p> <u>Account Details</u>
+    <br>
+    Your Name : {{ userName | titlecase }}
+    <br>
+    Your Id : {{userId}}
+  </p>
+  <div class="text-center">
+  <button class="btn btn-outline-dark px-5" (click)="logout()">Signout</button>
+</div>
+</div>
+<br>
+<app-footer></app-footer>

@@ -1,0 +1,43 @@
+
+<app-admin-navbar></app-admin-navbar>
+
+<div class="container text-center mt-5 mb-5">
+  <h2> <i class="fa-solid fa-file-invoice"></i> Sales Dashboard</h2>
+</div>
+<div class=" container">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">User Name</th>
+      <th scope="col">Order Value</th>
+      <th scope="col">Date & Time</th>
+      <th scope="col">Status</th>
+      <th scope="col">Manage</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.user.name | titlecase }}</td>
+      <td>{{ order.totalPrice }}</td>
+      <td>{{ order.dateOrdered | date:'short' }}</td>
+      <td>{{ order.status }}</td>
+      <td>
+        <button class="btn btn-outline-dark" (click)="showOrder(order.id)">
+          <i class="fa fa-eye"></i>
+        </button>
+          <button class="btn btn-outline-dark" (click)="deleteOrder(order.id)">
+            <i class="fa fa-trash"></i>
+          </button>
+      </td>
+  </tr>
+
+  </tbody>
+</table>
+</div>
+<div class="container text-center">
+  <button class="btn btn-outline-dark px-4" routerLink="/admin">Back</button>
+</div>
+<br>
+<br><br>
+
+<app-footer></app-footer>

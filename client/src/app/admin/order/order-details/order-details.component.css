@@ -1,0 +1,20 @@
+.head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+.btn1 {
+    margin-right: 30px;
+}
+
+
+.card {
+    margin-bottom: 20px;
+}
+
+
+.container {
+    margin-top: 15px;
+}

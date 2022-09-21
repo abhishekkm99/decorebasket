@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark py-3">
+    <div class="container">
+        <a class="navbar-brand" routerLink="/home"><i class="fa-solid fa-cart-shopping"></i> <b> DecoreBasket</b> </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggle"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="toggle">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="/products">Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="/contact-us">Feedback</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="/about-us">Know More</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active" routerLink="/discount">
+                    <i class="fa-solid fa-percent"></i> Discount</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active" routerLink="/wishlist">
+                    <i class="fa-solid fa-heart"></i> Wishlist</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active" routerLink="/cart"><i class="fa-brands fa-opencart"></i> Cart</a>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="/auth"><i class="fa fa-user" aria-hidden="true"></i> Account</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

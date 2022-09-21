@@ -1,0 +1,19 @@
+
+
+
+.btn {
+    margin: 5px;
+}
+
+
+table,
+th,
+td {
+    border: 2px solid black;
+}
+
+
+td {
+    padding: 10px;
+}
+

@@ -1,0 +1,35 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="container text-center mt-5 mb-5">
+  <h2>Admin Dash-Board</h2>
+</div>
+<div class="container col-lg-6">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Products Count</th>
+      <th scope="col">Users Count</th>
+      <th scope="col">Sales Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{totalProducts}} </td>
+      <td>{{totalUsers}}</td>
+      <td>{{totalOrders}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<br>
+<div class="container text-center">
+  <button class="btn btn-outline-dark" routerLink="/product-list">Product-DashBoard</button>
+  <button class="btn btn-outline-dark" routerLink="/user-list">User-DashBoard</button>
+  <button class="btn btn-outline-dark" routerLink="/order">Sales-DashBoard</button>
+  <button class="btn btn-outline-dark" routerLink="/coupon-list">Coupon-DashBoard</button>
+</div>
+<br>
+<br>
+<br>
+
+<app-footer></app-footer>

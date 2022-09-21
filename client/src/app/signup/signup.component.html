@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+<div class="conatiner col-lg-4 col-md-5 col-sm-6 m-auto mt-5 mb-5">
+  <h3 class="text-center mb-4">Welcome To DecoreBasket
+    <br>
+    Register Now
+  </h3>
+    <form [formGroup]="form" class="text-left">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Your Name</label>
+            <label *ngIf="form.controls['name'].invalid && isProcessing">
+                <label *ngIf="form.controls['name'].errors['required']">*</label>
+            </label>
+            <input type="text" formControlName="name" class="form-control" placeholder="Enter your name" />
+        </div><br>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Your Email Address</label>
+            <label *ngIf="form.controls['email'].invalid && isProcessing">
+                <label *ngIf="form.controls['email'].errors['required']">*</label>
+                <span *ngIf="form.controls['email'].errors['email']"></span>
+                <span style="color: red">Email is invalid</span>
+            </label>
+            <input type="text" formControlName="email" class="form-control" placeholder="Enter Your Email" />
+        </div><br>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <label *ngIf="form.controls['password'].invalid && isProcessing">
+                <label *ngIf="form.controls['password'].errors['required']">*</label>
+            </label>
+            <input type="password" formControlName="password" class="form-control" placeholder="Enter Password" />
+        </div><br>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Your Phone</label>
+            <label *ngIf="form.controls['phone'].invalid && isProcessing">
+                <label *ngIf="form.controls['phone'].errors['required']">*</label>
+            </label>
+            <input type="number" formControlName="phone" class="form-control" placeholder="Enter Your  Phone" />
+        </div><br>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Your Address</label>
+            <input type="text" formControlName="address" class="form-control" placeholder="Enter Address" />
+        </div><br>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Your City</label>
+            <input type="text" formControlName="city" class="form-control" placeholder="Enter City" />
+        </div><br>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Your Country</label>
+            <input type="text" formControlName="country" class="form-control" placeholder="Enter Country" />
+        </div><br>
+        <button type="submit" class="btn btn-outline-dark" (click)="signup()">Register</button>
+    </form>
+    <br>
+    <a class="d-block text-center " routerLinkActive="active" routerLink="/login">Already have an account with us?</a>
+</div>
+<app-footer></app-footer>

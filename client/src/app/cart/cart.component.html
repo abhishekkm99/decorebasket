@@ -1,0 +1,96 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h2 class="text-center mb-4 mt-5">YOUR CART</h2>
+  <div class="text-center" *ngIf="cartItems.length <= 0">
+    <div class="center">
+      <img src="../../assets/Images/emptycart.webp" />
+      <h5>Nothing in Your Cart</h5>
+      <h6>You don't have any product in your cart</h6>
+      <br />
+      <button
+        routerLinkActive="active"
+        routerLink="/products"
+        class="btn btn-outline-dark"
+      >
+        See New Product
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container col-lg-4 col-md-6 col-sm-12 mt-5 text-center">
+  <div class="card shadow-lg">
+    <div class="card-body">
+      <h2 class="card-title">Order Value</h2>
+      <h5 class="card-subtitle mb-2 mt-2 text-muted">Summary</h5>
+      <span>Product Price=</span>
+      <span class="fs-5">{{ totalPrice | currency: "INR" }}</span>
+      <br />
+      <span>Packing Charge=</span>
+      <span class="fs-5">zero</span>
+      <br>
+      <input type="text" [(ngModel)]="coupCode" placeholder="Have a coupon?" class="text-center pt-1 pb-2 mt-2">
+      <button class="btn btn-outline-success" (click)="storecoupon()"> Apply</button>
+      <br>
+      <span> Total Net Price=</span>
+      <span class="fs-3"> {{ totalPrice | currency: "INR" }}</span>
+      <br />
+      <button class="btn btn-outline-dark mt-2 px-5" (click)="onCheckout()">Buy</button>
+    </div>
+  </div>
+</div>
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-5" *ngFor="let item of cartItems">
+      <div class="card shadow-lg">
+        <img class="cart-image" [src]="item.product.image" />
+        <div class="card-body">
+          <h3 class="card-title">{{ item.product.name | titlecase }}</h3>
+          <h5 class="text-muted">
+            Type: {{ item.product.category | titlecase }}
+          </h5>
+          <p class="card-text">
+            Product Info: {{ item.product.description | titlecase }}
+            <br />
+            <span class="fs-4">
+              Price: {{ item.product.price | currency: "INR" }}</span
+            >
+          </p>
+
+          <h6 class="mt-2">
+            <label class="px-6">Quantity=</label>
+            <span class="fs-5">
+              <input
+                class="px-2"
+                type="number"
+                [(ngModel)]="item.quantity"
+                id="quantity"
+                min="0"
+                max="100"
+                placeholder="Enter the quantity"
+                (change)="updateQuantity($event, item)"
+              />
+            </span>
+          </h6>
+          <h6 class="mt-2">
+            Subtotal:
+            <span class="fs-3">{{
+              item.product.price * item.quantity | currency: "INR"
+            }}</span>
+          </h6>
+          <div class="text-end">
+            <button
+              class="btn btn-outline-danger px-4 mt-2"
+              (click)="delete(item)"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+  <div class="conatiner col-lg-4 col-md-5 col-sm-6 m-auto mt-5 mb-5">
+    <h2 class="text-center mb-5">Get In Touch</h2>
+    <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+      <div class="form-group">
+        <input type="text" placeholder=" Your Name" name="name"
+        class="form-control" ngModel required #name="ngModel">
+      </div><br>
+      <div class="form-group">
+        <input type="email" class="form-control" placeholder=" Your Email" email name="email" ngModel required #email="ngModel">
+      </div><br>
+      <div class="form-group">
+        <input type="number" class="form-control" placeholder="Phone No" name="phonenumber" ngModel required #phone="ngModel">
+      </div><br>
+      <div class="form-group">
+        <textarea class="form-control" placeholder="How can we help you?" style="height: 100px" name="messages" ngModel required #messages="ngModel"></textarea>
+      </div>
+      <br>
+      <div class="container text-center">
+        <input type="submit" class="btn btn-outline-dark" (click)="myFunction()" value="Send">
+        <input type="reset" class="btn btn-outline-dark" value="Reset">
+    </div>
+    </form>
+  </div>
+
+
+
+
+<app-footer></app-footer>

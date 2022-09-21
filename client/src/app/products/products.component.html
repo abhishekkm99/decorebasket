@@ -1,0 +1,11 @@
+<app-navbar></app-navbar>
+<app-search></app-search>
+<div class="container mt-5">
+  <h2 class="text-center mt-5 -mb-5">ALL PRODUCTS</h2>
+    <div class="row">
+      <div class=" col-lg-3 col-md-4 col-sm-6  mt-5 mb-5" *ngFor="let product of products">
+        <app-product-item [product]="product"></app-product-item>
+      </div>
+    </div>
+  </div>
+<app-footer></app-footer>

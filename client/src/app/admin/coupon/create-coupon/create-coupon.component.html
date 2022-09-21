@@ -1,0 +1,40 @@
+<app-admin-navbar></app-admin-navbar>
+    <div class="container col-lg-4 col-md-5 col-sm-6 m-auto mt-5 mb-5">
+      <h2 class="text-center mb-3 ">Create Coupon</h2>
+        <form [formGroup]="form">
+            <div class="form-group">
+                <label for="couponName">Coupon Name</label>
+                <input type="text" class="form-control" id="couponName" formControlName="couponName" placeholder=" Coupon Name" />
+                <small *ngIf="form.controls['couponName'].invalid && isSubmitted" style="color: red"> Coupon Name is
+                    required</small>
+            </div><br>
+            <div class="form-group">
+              <label for="couponCode">Coupon Code</label>
+              <input type="text" class="form-control" id="couponCode" formControlName="couponCode"
+              placeholder="Coupon Code" />
+              <small *ngIf="form.controls['couponCode'].invalid && isSubmitted" style="color: red">Coupon Code is
+                required</small>
+              </div><br>
+              <div class="form-group">
+                  <label for="couponValue">Coupon Value</label>
+                  <input type="number" class="form-control" id="couponValue" formControlName="couponValue" placeholder=" Coupon Value" />
+                  <small *ngIf="form.controls['couponValue'].invalid && isSubmitted" style="color: red">Coupon Value is
+                      required</small>
+              </div><br>
+            <div class="form-group">
+                <label for="minPurchase">Minimum Purchase</label>
+                <input type="number" class="form-control" id="minPurchase" formControlName="minPurchase" placeholder="Minimum Purchase" />
+                <small *ngIf="form.controls['minPurchase'].invalid && isSubmitted" style="color: red">Field is
+                    required</small>
+            </div>
+        </form>
+        <br>
+        <button class="btn btn-outline-dark px-3" (click)="onSubmit()">
+            Create
+        </button>
+        <button class="btn btn-outline-dark px-4 mx-3" routerLink="/coupon-list">Back</button>
+    </div>
+
+
+
+<app-footer></app-footer>

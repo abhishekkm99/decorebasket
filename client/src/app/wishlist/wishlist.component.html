@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h2 class="text-center mb-5 mt-5">YOUR WISHLIST</h2>
+  <div *ngIf="cartItems.length <= 0">
+    <div class="text-center">
+      <img src="../../assets/Images/wishlist.png" alt="empty wishist">
+      <h6>You don't have any item in your wishlist</h6>
+      <h6>Browse New Items</h6>
+      <br />
+      <button
+        routerLinkActive="active"
+        routerLink="/products"
+        class="btn btn-outline-dark"
+      >
+        See Products
+      </button>
+    </div>
+  </div>
+</div>
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-5" *ngFor="let item of cartItems">
+      <div class="card shadow-lg">
+        <img class="cart-image" [src]="item.product.image" />
+        <div class="card-body">
+          <h3 class="card-title">{{ item.product.name | titlecase}}</h3>
+          <h5 class="text-muted">Type:
+            {{item.product.category | titlecase}}</h5>
+          <p class="card-text">Product Info: {{ item.product.description | titlecase }}
+          </p>
+          <h4 class="card-title"> Price:{{ item.product.price | currency: "INR" }}</h4>
+          <div class="text-end">
+          <button class="btn btn-outline-danger px-3 mt-2" (click)="delete(item)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

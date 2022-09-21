@@ -1,0 +1,52 @@
+<app-admin-navbar></app-admin-navbar>
+    <div class="container col-lg-4 col-md-5 col-sm-6 m-auto mt-5 mb-5">
+      <h2 class="text-center mb-3 ">Add Product</h2>
+        <form [formGroup]="form">
+            <div class="form-group">
+                <label for="name">Product Name</label>
+                <input type="text" class="form-control" id="name" formControlName="name" placeholder=" Product Name" />
+                <small *ngIf="form.controls['name'].invalid && isSubmitted" style="color: red">Name is
+                    required</small>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" id="price" formControlName="price" placeholder="Price" />
+                <small *ngIf="form.controls['price'].invalid && isSubmitted" style="color: red">Price is
+                    required</small>
+            </div>
+            <div class="form-group">
+              <label for="category">Category</label>
+              <input type="text" class="form-control" id="category" formControlName="category"
+                  placeholder="Category" />
+              <small *ngIf="form.controls['category'].invalid && isSubmitted" style="color: red">Category is
+                  required</small>
+          </div>
+            <div class="form-group">
+                <label for="stock">Stock</label>
+                <input type="number" class="form-control" id="stock" formControlName="stock" placeholder="Stock" />
+                <small *ngIf="form.controls['stock'].invalid && isSubmitted" style="color: red">Stock is
+                    required</small>
+            </div>
+            <div class="form-group">
+                <label for="description"> Product Description</label>
+                <textarea name="description" id="description" class="form-control" formControlName="description"
+                    rows="3" placeholder=" Product Details"></textarea>
+                <small *ngIf="form.controls['description'].invalid && isSubmitted" style="color: red">Description is
+                    required</small>
+            </div>
+            <div class="form-group">
+                <label for="image">Image</label>
+                <input class="form-control im" type="file" accept="image/*" formControlName="image"
+                    (change)="onUpload($event)" />
+            </div>
+        </form>
+        <br>
+        <button class="btn btn-outline-dark px-3" (click)="onSubmit()">
+            {{ editMode ? "Update" : "Create" }}
+        </button>
+        <button class="btn btn-outline-dark px-4 mx-3" routerLink="/product-list">Back</button>
+    </div>
+
+
+
+<app-footer></app-footer>

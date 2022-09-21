@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+
+<div class="container text-center mt-5 mb-5">
+  <h2><i class="fa-solid fa-table"></i> Working Coupons</h2>
+</div>
+<div class="card w-50">
+
+  <div class="card-body" *ngFor="let data of coupons">
+    <h5 class="card-title">{{data.couponName}}</h5>
+    <p class="card-text"> Coupon Value: {{data.couponValue}}</p>
+    <input type="text" class="form-control" id="lname" name="lname" [value]="data.couponCode" style="text-align:center;" readonly>
+    <br>
+    <button (click)="copy(data.couponCode)" type="button" id="btn1" class="btn btn-dark">Click to Copy</button>
+    <hr>
+  </div>
+</div>
+
+
+<app-footer></app-footer>

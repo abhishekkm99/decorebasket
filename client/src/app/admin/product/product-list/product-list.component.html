@@ -1,0 +1,43 @@
+
+<app-admin-navbar></app-admin-navbar>
+
+<div class="container text-end mt-5 mt-3">
+  <h2 class="mb-3"><i class="fa-solid fa-table"></i> Products Dashboard</h2>
+  <button class="btn btn-outline-dark px-3" (click)="csvupload()"> <i class="fa fa-plus"></i>
+    Add Multiple Product</button>
+  <button class="btn btn-outline-dark px-3" routerLink="/product-create"> <i class="fa fa-plus"></i>
+    Add New Product</button>
+  <button class="btn btn-outline-dark px-4" routerLink="/admin">Back</button>
+</div>
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-5" *ngFor="let product of products">
+      <div class="card shadow-lg">
+        <img class="cart-image" src="{{product.image}}" />
+        <div class="card-body">
+          <h3 class="card-title">{{product.name | titlecase}}</h3>
+          <h5 class="text-muted">Category:
+            {{product.category | titlecase}}</h5>
+          <h6 class="text-muted">Stock:
+            {{product.stock}}</h6>
+          <p class="card-text">Info: {{ product.description | titlecase }}
+          </p>
+          <h4 class="card-title"> Price:{{product.price | currency: "INR" }}</h4>
+          <div class="text-end">
+            <!-- <button class="btn btn-outline-danger" *ngIf="product.stock<10">
+              <a href="mailto:abhishekkumar2527@gmail.com?subject= {{product.name}} is low in Decore Basket Stock &body= Seller your Product namely {{product.name | uppercase}} of category {{product.category | uppercase}} is {{product.stock}} in quantity only. Please reply back to admin@decorebasket.com , incase you want to update the stock" target="_blank"><i class="fa-xl fa fa-envelope" aria-hidden="true"></i> Low Stock</a>
+            </button> -->
+            <button class="btn btn-outline-dark" (click)="updateProduct(product.id)">
+              <i class="fa fa-edit"></i>
+            </button>
+            <button class="btn btn-outline-dark" (click)="deleteProduct(product.id)">
+              <i class="fa fa-trash"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
