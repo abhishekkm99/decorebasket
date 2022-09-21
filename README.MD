@@ -1,4 +1,4 @@
-## DECOREBASKET is web application developed by @Abhishek Kumar @Mihir Raj Singh @Sayan Dirghangi Group A1 FSD MEAN C1
+## DECOREBASKET is web application developed by @Abhishek Kumar @Mihir Raj Singh @Sayan Dirghangi
 ## All the requirements of the capstone project have been met
 
     Hit "npm start" on both the console of client and backend
